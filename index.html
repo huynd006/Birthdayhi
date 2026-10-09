@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <!DOCTYPE html>
 <html lang="vi">
@@ -1480,4 +1481,1488 @@
     });
   </script>
 </body>
+=======
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday! 🎂</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink: #ff72a8;
+      --pink-dark: #f34e91;
+      --purple: #9d82ff;
+      --ink: #604b69;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--ink);
+      font-family: "Quicksand", sans-serif;
+      background:
+        radial-gradient(circle at 10% 15%, #ffe1ee 0 7%, transparent 25%),
+        radial-gradient(circle at 90% 10%, #e8e0ff 0 8%, transparent 26%),
+        radial-gradient(circle at 80% 85%, #fff0c9 0 7%, transparent 25%),
+        linear-gradient(135deg, #fff8f4, #fff1f8 52%, #f5f0ff);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .35;
+      background-image: radial-gradient(#ff9bc2 1.2px, transparent 1.2px);
+      background-size: 26px 26px;
+      z-index: 0;
+    }
+
+    .falling-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .falling-layer .cake {
+      pointer-events: auto;
+    }
+
+    .page {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      padding: 30px 18px 60px;
+      pointer-events: none;
+    }
+
+    .page > * {
+      pointer-events: auto;
+    }
+
+    .top-label {
+      width: fit-content;
+      margin: 0 auto 18px;
+      padding: 9px 18px;
+      border: 1px solid #ffd0e2;
+      border-radius: 999px;
+      background: rgba(255,255,255,.75);
+      color: #e95795;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      box-shadow: 0 7px 20px #f4a7c51f;
+    }
+
+    header {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 28px 20px 18px;
+      border-radius: 32px;
+      position: relative;
+      z-index: 3;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--pink-dark);
+      font-family: "Baloo 2", cursive;
+      font-size: clamp(3rem, 8vw, 6.4rem);
+      line-height: .98;
+      font-weight: 800;
+      text-shadow: 0 5px 0 #ffd5e5, 0 12px 25px #ef75a533;
+      transform: rotate(-1deg);
+    }
+
+    .subtitle {
+      margin: 22px auto 0;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      line-height: 1.7;
+      max-width: 620px;
+    }
+
+    .name {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 4px 20px 8px;
+      border-radius: 16px;
+      background: #fff;
+      color: #8c6bea;
+      font-family: "Baloo 2", cursive;
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      font-weight: 800;
+      box-shadow: 0 8px 24px #bba5f52e;
+    }
+
+    .birthday-panel {
+      max-width: 820px;
+      margin: 22px auto 0;
+      padding: 22px 24px;
+      text-align: center;
+      border: 1px solid #fff;
+      border-radius: 26px;
+      background: rgba(255,255,255,.67);
+      box-shadow: 0 15px 45px #d9a2c51a;
+      backdrop-filter: blur(5px);
+    }
+
+    .big-cake {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      line-height: 1.15;
+      filter: drop-shadow(0 7px 7px #f29abc35);
+    }
+
+    .birthday-panel h2 {
+      margin: 8px 0 5px;
+      color: #e75b99;
+      font: 800 clamp(1.45rem, 4vw, 2.2rem) "Baloo 2", cursive;
+    }
+
+    .birthday-panel p {
+      margin: 0;
+      line-height: 1.7;
+      font-size: .98rem;
+    }
+
+    .gift-progress {
+      margin-top: 13px;
+      font-size: .82rem;
+      color: #9c7bab;
+      font-weight: 800;
+    }
+
+    .hint {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      margin: 25px auto 14px;
+      color: #9365a6;
+      font-weight: 700;
+      font-size: .98rem;
+      text-shadow: 0 1px 5px white;
+      position: relative;
+      z-index: 3;
+      text-align: center;
+    }
+
+    .hint .twinkle {
+      animation: twinkle 1.3s infinite alternate;
+    }
+
+    .game-area {
+      display: none;
+    }
+
+    .cake {
+      position: absolute;
+      z-index: 1;
+      top: -54px;
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      border: 1px solid #ffffffd9;
+      border-radius: 14px;
+      background: rgba(255,255,255,.88);
+      box-shadow: 0 5px 15px #d28ab42b;
+      font-size: 1.45rem;
+      cursor: pointer;
+      user-select: none;
+      animation: fall linear forwards, wobble 1.8s ease-in-out infinite alternate;
+      transition: box-shadow .18s, background .18s;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .cake:hover {
+      background: white;
+      box-shadow: 0 8px 22px #df78ad55;
+    }
+
+    .cake:focus-visible {
+      outline: 3px solid #9d82ff;
+      outline-offset: 3px;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 22px auto 0;
+      position: relative;
+      z-index: 3;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 999px;
+      padding: 13px 22px;
+      font: 800 .95rem "Quicksand", sans-serif;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, #ff83b4, #f45a9a);
+      box-shadow: 0 8px 18px #f16b9c40;
+    }
+
+    .btn-secondary {
+      color: #886ad1;
+      background: #fff;
+      border: 1px solid #e2d5ff;
+      box-shadow: 0 8px 18px #a98be51a;
+    }
+
+    .bottom-note {
+      text-align: center;
+      margin: 20px auto 0;
+      font-size: .9rem;
+      color: #a58aab;
+      position: relative;
+      z-index: 3;
+    }
+
+    .bottom-note b {
+      color: #ef72a6;
+    }
+
+    .footer {
+      margin-top: 42px;
+      text-align: center;
+      color: #b094b3;
+      font-size: .85rem;
+      position: relative;
+      z-index: 3;
+    }
+
+    .footer .heart {
+      color: #f45d9b;
+      display: inline-block;
+      animation: heartbeat 1s infinite;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      display: none;
+      place-items: center;
+      padding: 18px;
+      background: #4b2e5c82;
+      backdrop-filter: blur(7px);
+    }
+
+    .modal.show {
+      display: grid;
+      animation: fadeIn .22s ease;
+    }
+
+    .modal-card {
+      position: relative;
+      width: min(560px, 100%);
+      max-height: 92vh;
+      overflow-y: auto;
+      padding: 20px 20px 26px;
+      text-align: center;
+      border-radius: 30px;
+      background: linear-gradient(160deg, #fff, #fff5fa);
+      box-shadow: 0 25px 90px #3e1f4c55;
+      animation: pop .35s cubic-bezier(.2,.9,.3,1.3);
+    }
+
+    .close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 2;
+      width: 39px;
+      height: 39px;
+      border: 0;
+      border-radius: 50%;
+      background: #fff0f6;
+      color: #d95591;
+      font-size: 1.4rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px #c7679222;
+    }
+
+    .photo-placeholder {
+      display: none;
+      padding: 22px;
+      color: #a16c9a;
+      line-height: 1.6;
+    }
+
+    .modal-kicker {
+      color: #b28bd4;
+      font-weight: 800;
+      letter-spacing: 2px;
+      font-size: .75rem;
+      text-transform: uppercase;
+    }
+
+    .modal h2 {
+      margin: 5px 0 8px;
+      font: 800 clamp(1.8rem, 5vw, 2.5rem) "Baloo 2", cursive;
+      color: #f05c9a;
+    }
+
+    .wish {
+      margin: 0 auto 17px;
+      max-width: 440px;
+      font-size: 1.04rem;
+      line-height: 1.8;
+      color: #705a78;
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .confetti {
+      position: fixed;
+      z-index: 30;
+      top: -20px;
+      pointer-events: none;
+      animation: confettiFall 2.8s linear forwards;
+    }
+
+    @keyframes fall {
+      from {
+        transform: translateY(0) rotate(-10deg);
+      }
+      to {
+        transform: translateY(var(--fall-distance)) rotate(380deg);
+      }
+    }
+
+    @keyframes wobble {
+      from { margin-left: -5px; }
+      to { margin-left: 5px; }
+    }
+
+    @keyframes twinkle {
+      from {
+        opacity: .45;
+        transform: scale(.85) rotate(-12deg);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1.12) rotate(12deg);
+      }
+    }
+
+    @keyframes heartbeat {
+      50% { transform: scale(1.25); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes pop {
+      from {
+        opacity: 0;
+        transform: scale(.8) translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    @keyframes confettiFall {
+      to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: .2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        padding: 20px 12px 40px;
+      }
+
+      header {
+        padding: 18px 8px 10px;
+      }
+
+      .birthday-panel {
+        padding: 18px 14px;
+        margin-top: 17px;
+      }
+
+      .cake {
+        width: 36px;
+        height: 36px;
+        border-radius: 12px;
+        font-size: 1.2rem;
+      }
+
+      .modal-card {
+        padding: 15px 13px 22px;
+        border-radius: 24px;
+      }
+
+      .subtitle {
+        margin-top: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    
+    /* ===== MÀN HÌNH NHẬP NGÀY SINH NHẬT ===== */
+    body.locked {
+    overflow: hidden;
+    }
+
+    body.locked .page,
+    body.locked .falling-layer {
+    visibility: hidden;
+    }
+
+    .date-gate {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 15% 20%, #ffd9e9 0, transparent 35%),
+        radial-gradient(circle at 85% 25%, #e5dcff 0, transparent 35%),
+        linear-gradient(135deg, #fff7f2, #ffeef7 55%, #f3edff);
+    opacity: 1;
+    transition: opacity .8s ease, visibility .8s ease;
+    }
+
+    .date-gate.leaving {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    }
+
+    .date-gate::before,
+    .date-gate::after {
+    content: "♡";
+    position: absolute;
+    color: #f59dc2;
+    opacity: .35;
+    font-size: 190px;
+    animation: gateFloat 6s ease-in-out infinite;
+    pointer-events: none;
+    }
+
+    .date-gate::before {
+    left: -45px;
+    bottom: 3%;
+    transform: rotate(-20deg);
+    }
+
+    .date-gate::after {
+    content: "✧";
+    font-size: 230px;
+    right: -35px;
+    top: 2%;
+    color: #ad95f3;
+    animation-delay: -3s;
+    }
+
+    .gate-sparkle {
+    position: absolute;
+    color: #e8a5c7;
+    font-size: 24px;
+    pointer-events: none;
+    animation: gateFloat 4s ease-in-out infinite;
+    }
+
+    .gate-sparkle.s1 {
+    top: 15%;
+    left: 18%;
+    }
+
+    .gate-sparkle.s2 {
+    top: 24%;
+    right: 18%;
+    animation-delay: -1.5s;
+    }
+
+    .gate-sparkle.s3 {
+    bottom: 17%;
+    right: 22%;
+    animation-delay: -2.5s;
+    }
+
+    .gate-card {
+    position: relative;
+    z-index: 2;
+    width: min(440px, 100%);
+    padding: 36px 27px 30px;
+    text-align: center;
+    border: 2px solid rgba(255,255,255,.9);
+    border-radius: 34px;
+    background: rgba(255,255,255,.79);
+    box-shadow:
+        0 25px 80px rgba(205, 127, 173, .2),
+        inset 0 0 25px rgba(255,255,255,.8);
+    backdrop-filter: blur(15px);
+    animation: gateAppear .9s cubic-bezier(.2,.8,.2,1) both;
+    }
+
+    .gate-ribbon {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 7px 15px;
+    border: 1px solid #ffd7e7;
+    border-radius: 999px;
+    background: #fff5fa;
+    color: #e76a9f;
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    }
+
+    .gate-cake {
+    display: block;
+    margin: 0 auto 12px;
+    font-size: 4.4rem;
+    filter: drop-shadow(0 8px 8px #ed8eb333);
+    animation: gateCakeBounce 2s ease-in-out infinite;
+    }
+
+    .gate-title {
+    margin: 0;
+    color: #ee6a9f;
+    font: 800 clamp(1.9rem, 6vw, 2.6rem)/1.2 "Baloo 2", cursive;
+    }
+
+    .gate-description {
+    margin: 12px 0 23px;
+    color: #8e7795;
+    font-size: .98rem;
+    line-height: 1.8;
+    }
+
+    .gate-input {
+    width: 100%;
+    height: 56px;
+    padding: 0 16px;
+    border: 2px solid #f7d7e7;
+    border-radius: 17px;
+    outline: none;
+    background: #fffafd;
+    color: #785d83;
+    text-align: center;
+    font: 700 1.1rem "Quicksand", sans-serif;
+    letter-spacing: 1.5px;
+    transition: border-color .25s, box-shadow .25s, transform .25s;
+    }
+
+    .gate-input::placeholder {
+    color: #c9adc3;
+    font-size: .95rem;
+    letter-spacing: .5px;
+    }
+
+    .gate-input:focus {
+    border-color: #f28bb6;
+    box-shadow: 0 0 0 5px #ffddeb;
+    transform: translateY(-2px);
+    }
+
+    .gate-button {
+    width: 100%;
+    margin-top: 14px;
+    min-height: 54px;
+    border: none;
+    border-radius: 17px;
+    color: white;
+    background: linear-gradient(135deg, #ff91bc, #ee66a1);
+    box-shadow: 0 9px 20px #ed6da340;
+    font: 800 1rem "Quicksand", sans-serif;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s, filter .2s;
+    }
+
+    .gate-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 13px 25px #ed6da34d;
+    filter: saturate(1.1);
+    }
+
+    .gate-button:active {
+    transform: scale(.97);
+    }
+
+    .gate-message {
+    min-height: 27px;
+    margin: 13px 0 0;
+    color: #e45e91;
+    font-size: .88rem;
+    font-weight: 700;
+    line-height: 1.5;
+    }
+
+    .gate-footer {
+    margin-top: 12px;
+    color: #c09bb9;
+    font-size: .8rem;
+    }
+
+    .gate-card.shake {
+    animation: gateShake .4s ease;
+    }
+
+    @keyframes gateAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(.94);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    }
+
+    @keyframes gateFloat {
+    0%, 100% {
+        translate: 0 0;
+        rotate: -8deg;
+    }
+    50% {
+        translate: 0 -18px;
+        rotate: 8deg;
+    }
+    }
+
+    @keyframes gateCakeBounce {
+    0%, 100% {
+        transform: translateY(0) rotate(-4deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(4deg);
+    }
+    }
+
+    @keyframes gateShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    50% { transform: translateX(8px); }
+    75% { transform: translateX(-5px); }
+    }
+
+    @media (max-width: 480px) {
+    .gate-card {
+        padding: 30px 20px 25px;
+        border-radius: 28px;
+    }
+
+    .gate-cake {
+        font-size: 3.8rem;
+    }
+    }
+    
+/* ===== TỐI ƯU GIAO DIỆN ĐIỆN THOẠI ===== */
+@media (max-width: 600px) {
+  .page {
+    padding: 14px 12px 28px;
+  }
+
+  .top-label {
+    margin-bottom: 10px;
+    padding: 6px 12px;
+    font-size: .68rem;
+    letter-spacing: 1px;
+  }
+
+  header {
+    padding: 12px 5px 8px;
+  }
+
+  h1 {
+    font-size: clamp(2.3rem, 10vw, 3.3rem);
+    line-height: 1.05;
+  }
+
+  .subtitle {
+    margin-top: 12px;
+    font-size: .88rem;
+    line-height: 1.55;
+  }
+
+  .name {
+    margin-top: 8px;
+    padding: 3px 13px 5px;
+    font-size: 1.45rem;
+  }
+
+  .birthday-panel {
+    margin-top: 12px;
+    padding: 12px 10px;
+    border-radius: 20px;
+  }
+
+  .big-cake {
+    font-size: 2.2rem;
+  }
+
+  .birthday-panel h2 {
+    margin: 4px 0;
+    font-size: 1.35rem;
+  }
+
+  .birthday-panel p {
+    font-size: .79rem;
+    line-height: 1.5;
+  }
+
+  .gift-progress {
+    margin-top: 8px;
+    font-size: .75rem;
+  }
+
+  .hint {
+    margin: 17px auto 10px;
+    gap: 5px;
+    font-size: .72rem;
+    line-height: 1.5;
+  }
+
+  /* Icon nhỏ hơn nhưng vẫn đủ dễ chạm */
+  .cake {
+    width: 34px;
+    height: 34px;
+    border-radius: 11px;
+    font-size: 1.12rem;
+  }
+
+  .controls {
+    gap: 8px;
+    margin-top: 15px;
+  }
+
+  .btn {
+    padding: 10px 14px;
+    font-size: .79rem;
+  }
+
+  .bottom-note {
+    margin-top: 14px;
+    font-size: .76rem;
+    line-height: 1.5;
+  }
+
+  .footer {
+    margin-top: 24px;
+    font-size: .73rem;
+  }
+
+  /* Cửa sổ ảnh gọn hơn, không chiếm gần hết màn hình */
+  .modal {
+    padding: 12px;
+  }
+
+  .modal-card {
+    width: min(390px, 100%);
+    max-height: 86dvh;
+    padding: 14px 13px 18px;
+    border-radius: 23px;
+  }
+
+  .close {
+    top: 8px;
+    right: 8px;
+    width: 33px;
+    height: 33px;
+    font-size: 1.2rem;
+  }
+
+  .photo-wrap {
+    height: clamp(150px, 29dvh, 230px);
+    margin-bottom: 11px;
+    border-width: 4px;
+    border-radius: 17px;
+  }
+
+  .modal-kicker {
+    font-size: .65rem;
+    letter-spacing: 1.4px;
+  }
+
+  .modal h2 {
+    margin: 5px 0;
+    font-size: 1.55rem;
+    line-height: 1.2;
+  }
+
+  .wish {
+    margin-bottom: 12px;
+    font-size: .86rem;
+    line-height: 1.65;
+  }
+
+  .modal-actions {
+    gap: 7px;
+  }
+
+  .modal-actions .btn {
+    padding: 10px 12px;
+    font-size: .76rem;
+  }
+
+  /* Màn hình nhập ngày */
+  .gate-card {
+    width: min(360px, 100%);
+    padding: 25px 18px 21px;
+    border-radius: 25px;
+  }
+
+  .gate-ribbon {
+    padding: 6px 10px;
+    font-size: .64rem;
+    letter-spacing: 1px;
+  }
+
+  .gate-cake {
+    margin-bottom: 8px;
+    font-size: 3.2rem;
+  }
+
+  .gate-title {
+    font-size: 1.85rem;
+  }
+
+  .gate-description {
+    margin: 9px 0 17px;
+    font-size: .85rem;
+    line-height: 1.65;
+  }
+
+  .gate-input {
+    height: 49px;
+    font-size: .95rem;
+  }
+
+  .gate-button {
+    min-height: 48px;
+    font-size: .86rem;
+  }
+
+  .gate-message,
+  .gate-footer {
+    font-size: .75rem;
+  }
+}
+
+    /* Điện thoại nhỏ */
+    @media (max-width: 380px) {
+    .page {
+        padding-right: 9px;
+        padding-left: 9px;
+    }
+
+    h1 {
+        font-size: 2.15rem;
+    }
+
+    .birthday-panel h2 {
+        font-size: 1.2rem;
+    }
+
+    .hint {
+        font-size: .66rem;
+    }
+
+    .cake {
+        width: 31px;
+        height: 31px;
+        font-size: 1rem;
+    }
+
+    .photo-wrap {
+        height: 145px;
+    }
+
+    .modal h2 {
+        font-size: 1.35rem;
+    }
+
+    .wish {
+        font-size: .81rem;
+    }
+    }
+    /* Hiển thị toàn bộ ảnh trong khung quà sinh nhật */
+    .photo-wrap {
+    width: 100%;
+    height: auto !important;
+    min-height: 0;
+    max-height: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #fff5fa;
+    border-radius: 17px;
+    }
+
+    .photo-wrap img {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    max-height: 55vh;
+    object-fit: contain !important;
+    object-position: center;
+    border-radius: 12px;
+    }
+
+    /* Tối ưu ảnh trên điện thoại */
+    @media (max-width: 600px) {
+    .modal-card {
+        max-height: 92dvh;
+        overflow-y: auto;
+    }
+
+    .photo-wrap {
+        height: auto !important;
+        max-height: none;
+    }
+
+    .photo-wrap img {
+        width: 100%;
+        height: auto !important;
+        max-height: 42dvh;
+        object-fit: contain !important;
+    }
+    }
+  </style>
+</head>
+
+<body>
+    
+<!-- MÀN HÌNH NHẬP NGÀY -->
+<section class="date-gate" id="dateGate">
+  <span class="gate-sparkle s1">✧</span>
+  <span class="gate-sparkle s2">♡</span>
+  <span class="gate-sparkle s3">✦</span>
+
+  <div class="gate-card" id="gateCard">
+    <div class="gate-ribbon">CÂU HỎI</div>
+
+    <span class="gate-cake">🎂</span>
+
+    <h1 class="gate-title">Hôm nay là ngày<br>bao nhiêu nhỉ?</h1>
+
+    <p class="gate-description">
+      Có một món quà nhỏ đang chờ 🎀<br>
+      Nhập đúng ngày hôm nay để khám phá nhé.
+    </p>
+
+    <form id="dateForm">
+      <input
+        class="gate-input"
+        id="dateAnswer"
+        type="text"
+        placeholder="Nhập ngày / tháng / năm"
+        autocomplete="off"
+        inputmode="numeric"
+        maxlength="10"
+        aria-label="Nhập ngày tháng năm"
+        required
+      >
+
+      <button class="gate-button" type="submit">
+        Mở món quà bí mật 💌
+      </button>
+    </form>
+
+    <p class="gate-message" id="gateMessage" aria-live="polite"></p>
+
+    <div class="gate-footer">
+      Một chút niềm vui nho nhỏ ✨
+    </div>
+  </div>
+</section>
+  <div
+    class="falling-layer"
+    id="fallingLayer"
+    aria-label="Những chiếc bánh sinh nhật đang rơi">
+  </div>
+
+  <main class="page">
+    <div class="top-label">✿ CHÚC MỪNG SINH NHẬT ✿</div>
+
+    <header>
+      <h1>Happy Birthday!</h1>
+
+      <p class="subtitle">
+        Hôm nay là ngày đặc biệt của một người đặc biệt.<br>
+        Chạm vào những chiếc bánh nhỏ đang rơi để mở quà nhé! 💗
+      </p>
+
+      <div class="name" id="birthdayName">🎀 Birthday Star 🎀</div>
+
+      <section class="birthday-panel">
+        <div class="big-cake">🎂</div>
+        <h2>Chúc Ti Sinh Nhật Vui Vẻ Nhớ</h2>
+        <div class="gift-progress" id="giftProgress">
+          💌 Đã mở 0 / 16 lời chúc
+        </div>
+      </section>
+    </header>
+
+    <div class="hint">
+      <span class="twinkle">✨</span>
+      MỖI CHIẾC BÁNH LÀ MỘT ĐIỀU ĐẶC BIỆT
+      <span class="twinkle">✨</span>
+    </div>
+
+    <section class="game-area" id="gameArea"></section>
+
+    <div class="controls">
+      <button class="btn btn-primary" id="moreCakes">
+        🎂 Thả thêm bánh nào!
+      </button>
+
+      <button class="btn btn-secondary" id="celebrate">
+        🎉 Bật tiệc sinh nhật
+      </button>
+    </div>
+
+    <p class="bottom-note">
+      Mỗi chiếc bánh là một lời chúc nhỏ <b>♥</b>
+    </p>
+
+    
+  </main>
+
+  <div
+    class="modal"
+    id="wishModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle">
+
+    <div class="modal-card">
+      <button class="close" id="closeModal" aria-label="Đóng">×</button>
+
+      <div class="photo-wrap">
+        <img id="wishPhoto" src="" alt="Ảnh kỷ niệm" hidden>
+
+        <div class="photo-placeholder" id="photoPlaceholder">
+          📸<br>
+          Thêm ảnh của bạn vào thư mục <b>images</b><br>
+          và đặt tên lần lượt: <b>anh1.jpg</b> đến <b>anh16.jpg</b>.
+        </div>
+      </div>
+
+      <div class="modal-kicker" id="modalKicker">
+        A little birthday wish
+      </div>
+
+      <h2 id="modalTitle">Một điều ước dành cho bạn ✨</h2>
+
+      <p class="wish" id="wishText"></p>
+
+      <div class="modal-actions">
+        <button class="btn btn-primary" id="nextWish">
+          💌 Mở lời chúc khác
+        </button>
+
+        <button class="btn btn-secondary" id="closeModal2">
+          Tiếp tục bắt bánh 🎂
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Đổi tên người nhận tại đây.
+    const recipientName = "Khánh Na (Ti)";
+
+    // Đặt ảnh trong thư mục images, tên anh1.jpg ... anh16.jpg.
+    // Nếu dùng PNG, hãy đổi đuôi .jpg thành .png.
+    
+    const birthdayGifts = [
+    {
+        image: "images/anh1.jpg",
+        title: "Chúc mừng tuổi 14! 🎂",
+        wish: "Chúc mừng sinh nhật tuổi 14 nhé! Mong tuổi mới sẽ mở ra thật nhiều điều tốt đẹp, có thêm nhiều niềm vui, nhiều kỷ niệm đáng nhớ và luôn có những người yêu thương ở bên. Chúc bạn mỗi ngày đều vui vẻ và luôn là chính mình!"
+    },
+    {
+        image: "images/anh2.jpg",
+        title: "Tuổi 14 thật rực rỡ 🌷",
+        wish: "Mong tuổi 14 của em sẽ là một năm thật đặc biệt, có những ngày cười thật nhiều, những người bạn thật tốt và những khoảnh khắc sau này nhớ lại vẫn thấy hạnh phúc. Hãy tận hưởng những năm tháng học trò thật đẹp nhé!"
+    },
+    {
+        image: "images/anh3.jpg",
+        title: "Chúc em đậu nguyện vọng cấp 3! 🍀",
+        wish: "Điều anh mong nhất dành cho em là em sẽ thi thật tốt và đậu vào nguyện vọng cấp 3 mà mình mong muốn. Mong mọi cố gắng, những ngày chăm chỉ học bài và cả những lúc mệt mỏi đều được đền đáp xứng đáng. Cố lên nhé, mình tin em sẽ làm được!"
+    },
+    {
+        image: "images/anh4.jpg",
+        title: "Ước mơ sẽ thành hiện thực ✨",
+        wish: "Mong những điều em đang ấp ủ sẽ từng bước trở thành hiện thực. Dù con đường phía trước có lúc khó khăn, hãy tin vào bản thân và đừng vội bỏ cuộc. Em không cần phải giỏi nhất, chỉ cần cố gắng hơn chính mình của ngày hôm qua."
+    },
+    {
+        image: "images/anh5.jpg",
+        title: "Thi cử thật may mắn 🍀",
+        wish: "Chúc em luôn gặp may mắn trong học tập và các kỳ thi. Khi bước vào phòng thi, hãy thật bình tĩnh, đọc kỹ đề, nhớ những gì đã học và tự tin làm bài. Mong ngày có kết quả sẽ là ngày em mỉm cười thật tươi vì đã đạt được điều mình mong muốn!"
+    },
+    {
+        image: "images/anh6.jpg",
+        title: "Học tốt nhưng đừng áp lực 💗",
+        wish: "Chúc em học ngày càng tiến bộ, hiểu bài nhanh hơn và luôn có động lực cố gắng. Nhưng nhớ nhé, điểm số rất quan trọng, còn sức khỏe và niềm vui của em cũng quan trọng không kém. Mệt thì nghỉ một chút rồi lại tiếp tục nha!"
+    },
+    {
+        image: "images/anh7.jpg",
+        title: "Một hành trình mới đang chờ 🎒",
+        wish: "Mong em sớm bước vào ngôi trường cấp 3 mình yêu thích, gặp những người bạn mới, thầy cô tốt và có thêm thật nhiều trải nghiệm đáng nhớ. Một cánh cửa khép lại cũng là lúc một hành trình mới bắt đầu!"
+    },
+    {
+        image: "images/anh8.jpg",
+        title: "Luôn tự tin vào bản thân 🌟",
+        wish: "Có thể đôi khi em sẽ thấy lo lắng khi nhìn người khác giỏi hơn mình, nhưng đừng vì thế mà nghi ngờ bản thân nhé. Ai cũng có tốc độ trưởng thành riêng. Hãy kiên trì, cố gắng và nhớ rằng em đã tiến xa hơn mình nghĩ rất nhiều rồi."
+    },
+    {
+        image: "images/anh9.jpg",
+        title: "Mong em luôn bình yên ☁️",
+        wish: "Chúc tuổi mới của em có thật nhiều ngày bình yên, ít buồn phiền và luôn có người để tâm sự mỗi khi mệt mỏi. Mong những điều không vui sẽ qua nhanh, còn những điều tốt đẹp sẽ ở lại thật lâu."
+    },
+    {
+        image: "images/anh10.jpg",
+        title: "Em xứng đáng với điều tốt đẹp 💐",
+        wish: "Mong em luôn được đối xử bằng sự chân thành, được tôn trọng, được yêu thương và được là chính mình. Đừng quên rằng em rất đáng quý, kể cả trong những ngày em cảm thấy mình chưa làm tốt điều gì."
+    },
+    {
+        image: "images/anh11.jpg",
+        title: "Tình bạn tuổi học trò 🫶",
+        wish: "Chúc em có những người bạn thật lòng, cùng nhau học tập, cùng cười vì những chuyện nhỏ xíu và cùng tạo nên những kỷ niệm đẹp của tuổi học trò. Mong sau này khi nhớ lại, em sẽ luôn mỉm cười vì đã có một thời thanh xuân đáng yêu như thế."
+    },
+    {
+        image: "images/anh12.jpg",
+        title: "Luôn vui vẻ và đáng yêu 🌈",
+        wish: "Chúc em lúc nào cũng giữ được nụ cười dễ thương, trái tim ấm áp và nguồn năng lượng tích cực. Mong mỗi ngày đều có một chuyện nhỏ khiến em vui, một món ăn ngon khiến em thích thú và một lý do để mong chờ ngày mai."
+    },
+    {
+        image: "images/anh13.jpg",
+        title: "Đừng sợ những ngày khó khăn 🌻",
+        wish: "Nếu có lúc kết quả không như mong muốn, hãy cho bản thân thời gian để buồn rồi lại đứng lên nhé. Một bài kiểm tra hay một kỳ thi không thể quyết định toàn bộ giá trị của em. Điều quan trọng là em đã cố gắng và vẫn tiếp tục tiến về phía trước."
+    },
+    {
+        image: "images/anh14.jpg",
+        title: "Tuổi 14 khỏe mạnh nhé! 🧸",
+        wish: "Chúc em luôn khỏe mạnh, ăn ngon, ngủ đủ, học tập hiệu quả và có thời gian làm những điều mình yêu thích. Đừng thức khuya quá nhiều để học bài nha. Một cơ thể khỏe mạnh và tinh thần thoải mái sẽ giúp em đi xa hơn đấy!"
+    },
+    {
+        image: "images/anh15.jpg",
+        title: "Mong em luôn hạnh phúc 💕",
+        wish: "Mong em không chỉ có một ngày sinh nhật vui vẻ mà cả những ngày bình thường cũng có thật nhiều niềm vui. Chúc em biết trân trọng bản thân, biết yêu thương gia đình, sống tử tế và luôn giữ trong tim những ước mơ đẹp."
+    },
+    {
+        image: "images/anh16.jpg",
+        title: "Tuổi 14 — cố lên nhé! 🎉",
+        wish: "Chúc mừng sinh nhật tuổi 14 một lần nữa! Mong em có một tuổi mới thật đáng nhớ, học tập tiến bộ, thi vào lớp 10 thật tốt và đậu đúng nguyện vọng mình mong muốn. Chúc em luôn mạnh mẽ, vui vẻ và tự hào về chính mình. Hãy cố gắng hết sức, còn lại cứ để thời gian trả lời nhé. Happy Birthday! 💗🎂"
+    }
+    ];
+    
+
+    const cakeEmojis = ["🎂", "🧁", "🍰", "🎂", "🍥", "🧁", "🍰", "🎂"];
+
+    const modal = document.getElementById("wishModal");
+    const wishPhoto = document.getElementById("wishPhoto");
+    const photoPlaceholder = document.getElementById("photoPlaceholder");
+    const fallingLayer = document.getElementById("fallingLayer");
+
+    const openedGifts = new Set();
+
+    let lastGiftIndex = -1;
+    let spawnTimer;
+
+    document.getElementById("birthdayName").textContent =
+      "🎀 " + recipientName + " 🎀";
+
+    document.title = "Happy Birthday, " + recipientName + "! 🎂";
+
+    // Tạo bánh nhỏ rơi từ phía trên màn hình.
+    function spawnCake() {
+      const cake = document.createElement("button");
+
+      cake.className = "cake";
+      cake.type = "button";
+      cake.setAttribute("aria-label", "Mở một lời chúc sinh nhật");
+
+      cake.textContent =
+        cakeEmojis[Math.floor(Math.random() * cakeEmojis.length)];
+
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
+
+      const cakeWidth = window.innerWidth <= 600 ? 36 : 42;
+      const left = Math.random() * Math.max(0, screenWidth - cakeWidth);
+      const duration = 7 + Math.random() * 7;
+      const wobbleDuration = 1.8 + Math.random() * 1.8;
+
+      cake.style.left = left + "px";
+      cake.style.animationDuration =
+        duration + "s, " + wobbleDuration + "s";
+
+      cake.style.setProperty(
+        "--fall-distance",
+        (screenHeight + 100) + "px"
+      );
+
+      cake.style.opacity = (0.76 + Math.random() * 0.24).toFixed(2);
+
+      cake.addEventListener("click", function () {
+        const giftIndex = chooseGift();
+        showGift(giftIndex);
+        cake.remove();
+      });
+
+      fallingLayer.appendChild(cake);
+
+      window.setTimeout(function () {
+        cake.remove();
+      }, duration * 1000 + 500);
+    }
+
+    // Ưu tiên lời chúc chưa mở để mỗi lần bắt bánh là một bất ngờ mới.
+    function chooseGift() {
+      const unopened = birthdayGifts
+        .map((_, index) => index)
+        .filter(index => !openedGifts.has(index));
+
+      const choices = unopened.length
+        ? unopened
+        : birthdayGifts.map((_, index) => index);
+
+      let chosen =
+        choices[Math.floor(Math.random() * choices.length)];
+
+      if (choices.length > 1 && chosen === lastGiftIndex) {
+        chosen = choices[(choices.indexOf(chosen) + 1) % choices.length];
+      }
+
+      lastGiftIndex = chosen;
+      openedGifts.add(chosen);
+
+      document.getElementById("giftProgress").textContent =
+        "💌 Đã mở " + openedGifts.size + " / 16 lời chúc";
+
+      return chosen;
+    }
+
+    // Hiển thị ảnh và lời chúc trong cửa sổ bật lên.
+    function showGift(index) {
+      const gift = birthdayGifts[index];
+
+      document.getElementById("modalKicker").textContent =
+        "Lời chúc bí mật số " + (index + 1) + " / 16";
+
+      document.getElementById("modalTitle").textContent = gift.title;
+      document.getElementById("wishText").textContent = gift.wish;
+
+      wishPhoto.hidden = true;
+      photoPlaceholder.style.display = "block";
+
+      wishPhoto.onload = function () {
+        wishPhoto.hidden = false;
+        photoPlaceholder.style.display = "none";
+      };
+
+      wishPhoto.onerror = function () {
+        wishPhoto.hidden = true;
+        photoPlaceholder.style.display = "block";
+      };
+
+      wishPhoto.src = gift.image;
+
+      modal.classList.add("show");
+      launchConfetti(35);
+    }
+
+    function closeGift() {
+      modal.classList.remove("show");
+    }
+
+    // Hiệu ứng giấy màu và biểu tượng sinh nhật.
+    function launchConfetti(amount = 50) {
+      const colors = ["🎉", "💖", "✨", "🎊", "🌸", "⭐"];
+
+      for (let i = 0; i < amount; i++) {
+        const bit = document.createElement("span");
+
+        bit.className = "confetti";
+        bit.textContent =
+          colors[Math.floor(Math.random() * colors.length)];
+
+        bit.style.left = Math.random() * 100 + "vw";
+        bit.style.fontSize = (14 + Math.random() * 18) + "px";
+        bit.style.animationDelay = Math.random() * .7 + "s";
+        bit.style.animationDuration = (1.8 + Math.random() * 2) + "s";
+
+        document.body.appendChild(bit);
+
+        window.setTimeout(function () {
+          bit.remove();
+        }, 4500);
+      }
+    }
+
+    // Nút thả thêm bánh.
+    document.getElementById("moreCakes").addEventListener("click", function () {
+      for (let i = 0; i < 7; i++) {
+        window.setTimeout(spawnCake, i * 180);
+      }
+    });
+
+    // Nút bật tiệc sinh nhật.
+    document.getElementById("celebrate").addEventListener("click", function () {
+      launchConfetti(100);
+
+      for (let i = 0; i < 12; i++) {
+        window.setTimeout(spawnCake, i * 150);
+      }
+    });
+
+    document.getElementById("closeModal").addEventListener("click", closeGift);
+    document.getElementById("closeModal2").addEventListener("click", closeGift);
+
+    document.getElementById("nextWish").addEventListener("click", function () {
+      showGift(chooseGift());
+    });
+
+    // Nhấn ra ngoài cửa sổ hoặc phím Escape để đóng.
+    modal.addEventListener("click", function (event) {
+      if (event.target === modal) {
+        closeGift();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeGift();
+      }
+    });
+
+    // Tạo bánh ban đầu trên toàn màn hình.
+    for (let i = 0; i < 10; i++) {
+      window.setTimeout(spawnCake, i * 420);
+    }
+
+    // Tiếp tục thả bánh theo thời gian ngẫu nhiên.
+    function startRandomCakes() {
+      function scheduleNextCake() {
+        if (document.visibilityState === "visible") {
+          spawnCake();
+        }
+
+        spawnTimer = window.setTimeout(
+          scheduleNextCake,
+          520 + Math.random() * 500
+        );
+      }
+
+      scheduleNextCake();
+    }
+
+    startRandomCakes();
+    
+    // ===== KIỂM TRA NGÀY TRƯỚC KHI VÀO WEBSITE =====
+    document.body.classList.add("locked");
+
+    const dateGate = document.getElementById("dateGate");
+    const gateCard = document.getElementById("gateCard");
+    const dateForm = document.getElementById("dateForm");
+    const dateAnswer = document.getElementById("dateAnswer");
+    const gateMessage = document.getElementById("gateMessage");
+
+    dateForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    // Chấp nhận 10/10/2026 hoặc 10102026.
+    const answer = dateAnswer.value.trim();
+    const normalizedAnswer = answer.replace(/[.\-\s]/g, "/");
+
+    const isCorrect =
+        normalizedAnswer === "10/10/2026" ||
+        answer === "10102026";
+
+    if (isCorrect) {
+        gateMessage.textContent = "Chính xác rồi! Chuẩn bị nhận quà nhé! 💗";
+
+        dateAnswer.disabled = true;
+        dateForm.querySelector("button").disabled = true;
+
+        dateForm.querySelector("button").textContent =
+        "Đang mở món quà... ✨";
+
+        launchConfetti(35);
+
+        window.setTimeout(function () {
+        dateGate.classList.add("leaving");
+        document.body.classList.remove("locked");
+
+        window.setTimeout(function () {
+            dateGate.remove();
+        }, 850);
+        }, 700);
+
+    } else {
+        gateMessage.textContent =
+        "Hmm, chưa đúng rồi! Thử lại nhé, bạn ơi 🥺";
+
+        gateCard.classList.remove("shake");
+
+        // Khởi động lại hiệu ứng rung.
+        void gateCard.offsetWidth;
+
+        gateCard.classList.add("shake");
+        dateAnswer.value = "";
+        dateAnswer.focus();
+    }
+    });
+  </script>
+</body>
+>>>>>>> 5840c53 (Upload birthday website)
 </html>
